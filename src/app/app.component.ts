@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 
 import { AppState } from './models/app-state.model';
+import * as CounterActions from './actions/counter.actions'
 
 @Component({
   selector: 'app-root',
@@ -24,14 +25,14 @@ export class AppComponent {
 
   add() {
     this.store.dispatch({
-      type: 'Increment',
+      type: CounterActions.INCREMENT,
       payload: 1
     });
   }
 
   subtract() {
     this.store.dispatch({
-      type: 'Decrement',
+      type: CounterActions.DECREMENT,
       payload: 1
     });
   }
